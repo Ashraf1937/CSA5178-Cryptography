@@ -1,0 +1,32 @@
+#include <stdio.h>
+void encryptCaesarCipher(char *text, int shift) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] = ((text[i] - 'A' + shift) % 26) + 'A';
+        } else if (text[i] >= 'a' && text[i] <= 'z') {
+            text[i] = ((text[i] - 'a' + shift) % 26) + 'a';
+        }
+    }
+}
+void decryptCaesarCipher(char *text, int shift) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] = ((text[i] - 'A' - shift + 26) % 26) + 'A';
+        } else if (text[i] >= 'a' && text[i] <= 'z') {
+            text[i] = ((text[i] - 'a' - shift + 26) % 26) + 'a';
+        }
+    }
+}
+int main() {
+    char message[100];
+    int shift;
+    printf("Enter a message: ");
+    fgets(message, sizeof(message), stdin);
+    printf("Enter the shift value: ");
+    scanf("%d", &shift);
+    encryptCaesarCipher(message, shift);
+    printf("Encrypted message: %s\n", message);
+    decryptCaesarCipher(message, shift);
+    printf("Decrypted message: %s\n", message);
+    return 0;
+}
