@@ -46,8 +46,7 @@ int main()
 {
 int i,j,k=0,l,m=0,n;
 char key[MX][MX],keyminus[25],keystr[10],str[25]={0};
-char
-alpa[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+char alpa[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 printf("\nEnter key:");
 gets(keystr);
 printf("\nEnter the plain text:");
